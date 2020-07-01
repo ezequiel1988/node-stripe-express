@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const path = require('path')
 
 
-
+app.set("port", process.env.PORT || 3000);
 
 // Configuramos el uso de archivos .hbs
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +31,6 @@ app.use(require('./routes/index'));
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Seteamos el puerto
-app.listen(3000, () => {
-    console.log('Servidor de Stripe levantado')
-});
+app.listen(app.get("port"), () => {
+    console.log(`servidor Stripe activo en puerto ${app.get("port")}`);
+  });
