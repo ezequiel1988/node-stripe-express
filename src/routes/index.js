@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const { Router } = require('express');
 const router = Router();
-const stripe = require('stripe')('sk_test_51H07BXL0Vs2q39zFP55Im78mWTtqDOmR0OgQYQ5q8sb2qOXXKVnZFfE5XOeq2BfTSWyqghR0YZherg78oJnqLs8i00dEvmIhLb');
+const stripe = require('stripe')('private-key');
 
 router.get('/', async (req, res) => {
     res.render('index')
