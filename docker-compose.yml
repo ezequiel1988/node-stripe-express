@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  node-stripe:
+    build:
+      context: .
+    container_name: node-stripe
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src/index.js:/srv/src/index.js
